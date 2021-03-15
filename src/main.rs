@@ -1,3 +1,11 @@
+//! # cargo-tests
+//!
+//! description: generate llvm-cov reports when testings
+//! commands:
+//!     cargo tests <args>     run tests & generate cov report
+//!     cargo tests all        runs clean && tests && report
+//!     cargo tests clean      cleans up cov artifacts
+//!     cargo tests report     open cov report
 use std::{ffi::OsString, fs, path::Path, process::{Command, Stdio}};
 
 use log::{debug, error};
@@ -25,10 +33,21 @@ fn main() {
             },
             "report" => run_report(&path, &exec, &args[i+1..]),
             "clean" => run_clean(&path, &args[i+1..]),
+            "help" => run_help(),
             _ => run_tests(&path, &exec, &args[i..])
         }
         _ => run_tests(&path, &exec, &args[i..])
     }
+}
+
+fn run_help() {
+    println!("cargo tests");
+    println!("description: generate llvm-cov reports when testings");
+    println!("commands:");
+    println!("    cargo tests <args>: run tests & generate cov report");
+    println!("    cargo tests all: runs clean && tests && report");
+    println!("    cargo tests clean: cleans up cov artifacts");
+    println!("    cargo tests report: open cov report");
 }
 
 fn run_clean(path: &str, _args: &[OsString]) {
