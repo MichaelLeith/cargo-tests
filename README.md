@@ -1,6 +1,7 @@
 # cargo-tests
 
 description: generate llvm-cov reports when testings
+note: requires nightly
 
 commands:
 
@@ -11,3 +12,4 @@ commands:
      cargo tests clean      cleans up cov artifacts
 
      cargo tests report     open cov report
+

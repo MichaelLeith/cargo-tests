@@ -1,9 +1,15 @@
 [package]
 name = "cargo-tests"
+description = "generate llvm-cov reports when testings"
 version = "0.1.0"
 authors = ["TeamTeamWork <8036404+MichaelLeith@users.noreply.github.com>"]
 edition = "2018"
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/MichaelLeith/cargo-tests"
+repository = "https://github.com/MichaelLeith/cargo-tests"
+categories = ["development-tools::cargo-plugins", "development-tools::testing", "command-line-utilities"]
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -11,4 +17,3 @@ license = "MIT"
 log = "0.4.14"
 simple_logger = "1.11.0"
 toml = "0.5.8"
-
