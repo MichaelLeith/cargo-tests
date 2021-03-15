@@ -14,7 +14,9 @@ use simple_logger::SimpleLogger;
     cargo-tests is a small proxy that adds coverage to cargo test
  */
 fn main() {
-    SimpleLogger::new().init().unwrap();
+    SimpleLogger::new()
+        .with_level(log::LevelFilter::Error)
+        .init().unwrap();
     let args: Vec<_> = std::env::args_os().collect();
     let mut i = 1;
     if args.get(i).and_then(|s| s.to_str()) == Some("tests") {
