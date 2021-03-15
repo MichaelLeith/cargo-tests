@@ -30,7 +30,7 @@ fn main() {
         Some(subcommand) => match subcommand.to_str().unwrap() {
             "all" => {
                 run_clean(&path, &args[i+1..]);
-                run_tests(&path, &exec, &args[i..]);
+                run_tests(&path, &exec, &args[i+1..]);
                 run_report(&path, &exec, &args[i+1..]);
             },
             "report" => run_report(&path, &exec, &args[i+1..]),
